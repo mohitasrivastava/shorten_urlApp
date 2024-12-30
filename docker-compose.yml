@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  # Node.js app service
+  app:
+    build: .
+    ports:
+      - '3000:3000'
+    environment:
+      MONGO_URI: mongodb+srv://srivastavamohita18:1htwvSwq7SZQbIId@test-db.yrtic.mongodb.net/?retryWrites=true&w=majority&appName=test-db
+    networks:
+      - app-network
+
+# Define a network for communication between containers
+networks:
+  app-network:
+    driver: bridge
